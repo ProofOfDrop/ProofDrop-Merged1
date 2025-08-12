@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProofDrop — Prove You’re Real</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ethers.js -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <!-- Web3Modal + WalletConnect -->
+  <script src="https://unpkg.com/web3modal@1.9.8/dist/index.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
+
+</head>
+<body>
+  <div id="app">>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1>ProofDrop</h1>
+        <p class="subtitle">Reputation scoring — Ethereum Mainnet</p>
+      </div>
+      <div>
+        <button id="connectBtn" class="btn">Connect Wallet</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" id="walletCard" style="display:none">
+        <div class="row">
+          <div>
+            <h3 id="walletAddr">0x...</h3>
+            <p id="connectedChain">Network: —</p>
+          </div>
+          <div>
+            <div id="badge" class="badge">—</div>
+          </div>
+        </div>
+
+        <div id="scoreSection" class="scoreCard">
+          <h2>Score: <span id="scoreVal">—</span>/100</h2>
+          <div class="progress"><div id="scoreBar" style="width:0%"></div></div>
+          <div id="breakdown"></div>
+        </div>
+
+        <details style="margin-top:12px">
+          <summary>Raw metrics & logs</summary>
+          <pre id="rawOutput"></pre>
+        </details>
+      </section>
+
+      <section class="card" id="instructions">
+        <h3>How it works</h3>
+        <ol>
+          <li>Click <strong>Connect Wallet</strong> and choose a wallet (desktop or mobile).</li>
+          <li>The dashboard fetches on-chain data via Covalent (placeholder key) and optional sources.</li>
+          <li>Score is calculated client-side using configured rules (no quality multiplier).</li>
+        </ol>
+        <p class="muted">Important: this MVP uses placeholder API keys in <code>config.json</code>. Replace them before public use.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>ProofDrop MVP • Ethereum Mainnet • GitHub Pages friendly</p>
+    </footer>
+  </div>
+
+  
+  
+
+</div>
+  <script src="script.js"></script>
+
+  <script id="configData" type="application/json" src="config.json"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
